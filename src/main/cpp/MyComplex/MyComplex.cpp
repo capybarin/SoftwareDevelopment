@@ -28,29 +28,34 @@ private:
 
 public:
 
+    MyComplex (double Re, double Im){
+        this->Re=Re;
+        this->Im=Im;
+    }
+    
+    MyComplex (){
+        this->Re=0;
+        this->Im=0;
+    }
+
+
+    MyComplex operator= ( MyComplex A){
+        Re = A.Re;
+        Im = A.Im;
+        return *this;
+    }
+    
     double getRe(){
         return Re;
     }
     double getIm(){
         return Im;
     }
-    int setRe(double newRe){
-        Re = newRe;
-        return 1;
+    void setRe(double nRe){
+        Re = nRe;
     }
-    int setIm(double newIm){
-        Im = newIm;
-        return 1;
-    }
-    MyComplex (double pRe=0, double pIm=0){
-        Re=pRe;
-        Im=pIm;
-    }
-
-    MyComplex operator= ( MyComplex A){
-        Re = A.Re;
-        Im = A.Im;
-        return *this;
+    void setIm(double nIm){
+        Im = nIm;
     }
 };
 
@@ -169,6 +174,8 @@ int main()
     cin>>B;
     MyComplex C;
     C=A+B;
-    cout<<C<<endl;;
+    cout<<C<<endl;
+    cout<<A+5<<endl;
+    cout<<A*2<<endl;
     return 0;
 }
